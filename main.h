@@ -61,6 +61,16 @@ int _puts(char *strg);
 int print_char (va_list ap, prm_st *prm);
 int print_string(va_list ap, prm_st *prm);
 int print_percent(va_list ap, prm_st *prm);
-void init_prmrs(prm_t *prm, va_list ap);
+void init_prmrs(prm_st *prm, va_list ap);
+int _modifier(char *str, prm_st *prm);
+int *_width(char *str, prm_st *prm, va_list ap);
+int _flag(char *str, prm_st *prm);
+int g_print_f(char *str, va_list ap, prm_st *prm);
+int (*g_specifier(char *str))(va_list ap, prm_st *prm);
+
+
+
+
+
 
 #endif
