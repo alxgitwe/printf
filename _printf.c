@@ -23,9 +23,9 @@ int _printf(const char *format, ...)
 		return (-1);
 	if (!format[2] && format[1] == ' ' && format[0] == '%')
 		return (-1);
-	for (b = (char *)format; *b; *b++)
+	for (b = (char *)format; *b; b++)
 	{
-		init_prm(&prm, ap);
+		init_prmrs(&prm, ap);
 		if (*b != '%')
 		{
 			a = a + _putchar(*b);
@@ -41,6 +41,13 @@ int _printf(const char *format, ...)
 		b = _precision(b, &prm, ap);
 		if (_modifier(b, &prm))
 			b++;
-
-
+		if (!_specifier(b))
+			a = a + print_f_t(c, b
+					, prm.l_m || prm.h_m ? b - 1 : 0);
+		else
+			a = a + get_print_func(b, ap, &prm);
+	}
+	_putchar(BUF_FLUSH);
+	va_end(ap);
+	return (a);
 }
