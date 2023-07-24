@@ -21,6 +21,7 @@ int (*g_specifier(char *str))(va_list ap, prm_st *prm)
 		{"o", print_o},
 		{"u", print_ud},
 		{"x", print_h},
+		{"X", print_H},
 		{"p", print_ae},
 		{"S", print_ss},
 		{"r", print_rv},
