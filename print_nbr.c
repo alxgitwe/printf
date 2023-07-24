@@ -47,7 +47,7 @@ int print_nbr(char *s, prm_st *prm)
 	unsigned int a = _strlen(s);
 	int b = (!prm->unsn && *s == '-');
 
-	if (!prm->precision && *s == '0' && !str[1])
+	if (!prm->precision && *s == '0' && !s[1])
 		s = "";
 	if (b)
 	{
@@ -96,9 +96,9 @@ int print_nrs(char *s, prm_st *prm)
 	if ((prm->plus_f && prm->space_f && !c))
 		d++;
 	if (b && pchar == '0')
-		a = a + pchar ('0');
+		a = a + _putchar ('-');
 	if (prm->plus_f && !c && pchar == '0' && !prm->unsn)
-		a = a + _putchar('+')
+		a = a + _putchar('+');
 	else if (!prm->plus_f && prm->space_f && !c && !prm->unsn && prm->zero_f)
 		a = a + _putchar(' ');
 	while (d++ < prm->width)
@@ -107,7 +107,7 @@ int print_nrs(char *s, prm_st *prm)
 		a = a + _putchar('-');
 	if (prm->plus_f && !c && pchar == ' ' && !prm->unsn)
 		a = a + _putchar('+');
-	else if (!prm->plus_f && prm->space_f && !C && !prm->unsn && !prm->zero_f)
+	else if (!prm->plus_f && prm->space_f && !c && !prm->unsn && !prm->zero_f)
 		a = a + _putchar(' ');
 	a = a + _puts(s);
 	return (a);

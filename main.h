@@ -62,7 +62,7 @@ int _putchar(int c);
 int _puts(char *strg);
 
 /* nbr.c */
-char cvrt(long int nm, int be, int fs, prm_st *prm);
+char *cvrt(long int nm, int be, int fs, prm_st *prm);
 int print_ud(va_list ap, prm_st *prm);
 int print_ae(va_list ap, prm_st *prm);
 
@@ -71,7 +71,7 @@ int (*g_specifier(char *str))(va_list ap, prm_st *prm);
 int g_print_f(char *str, va_list ap, prm_st *prm);
 int _flag(char *str, prm_st *prm);
 int _modifier(char *str, prm_st *prm);
-int *_width(char *str, prm_st *prm, va_list ap);
+char *_width(char *str, prm_st *prm, va_list ap);
 
 /* print_f.c */
 int print_c(va_list ap, prm_st *prm);
@@ -104,7 +104,8 @@ void init_prmrs(prm_st *prm, va_list ap);
 /* _printf.c */
 int _printf(const char *format, ...);
 
-
+/* string_f.c */
+char *_precision(char *s, prm_st *prm, va_list ap);
 
 
 

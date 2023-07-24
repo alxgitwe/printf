@@ -11,17 +11,17 @@
 int (*g_specifier(char *str))(va_list ap, prm_st *prm)
 {
 	spcfier_t spcfier[] = {
-		{"c", print_char},
-		{"d", print_int},
-		{"i", print_int},
-		{"s", print_string},
-		{"%", print_percent},
-		{"b", print_binary},
-		{"o", print_octal},
-		{"u", print_unsigned},
-		{"x", print_hex},
+		{"c", print_c},
+		{"d", print_i},
+		{"i", print_i},
+		{"s", print_s},
+		{"%", print_p},
+		{"b", print_b},
+		{"o", print_o},
+		{"u", print_ud},
+		{"x", print_h},
 		{"p", print_ae},
-		{"S", print_S},
+		{"S", print_ss},
 		{"r", print_rv},
 		{"R", p_rot13},
 		{NULL, NULL}
@@ -143,7 +143,7 @@ int _modifier(char *str, prm_st *prm)
  * Return: return
  */
 
-int *_width(char *str, prm_st *prm, va_list ap)
+char *_width(char *str, prm_st *prm, va_list ap)
 {
 	int a = 0;
 

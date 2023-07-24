@@ -45,7 +45,7 @@ int print_i(va_list ap, prm_st *prm)
 		a = (short int)va_arg(ap, int);
 	else
 		a = (int)va_arg(ap, int);
-	return (print_nbr(cvrt(1, 10, 0, prm), prm));
+	return (print_nbr(cvrt(a, 10, 0, prm), prm));
 }
 
 /**
@@ -79,23 +79,23 @@ int print_s(va_list ap, prm_st *prm)
 
 	if (prm->minus_f)
 	{
-		if (prm->precision != UNIT_MAX)
-			for (b = 0, b < p, b++)
-				s = s + _putchar(*s++);
+		if (prm->precision != UINT_MAX)
+			for (b = 0; b < p; b++)
+				a = a + _putchar(*s++);
 		else
-			s = s + _puts(s);
+			a = a + _puts(s);
 	}
 	while (c++ < prm->width)
-		s = s + _putchar(pchar);
+		a = a + _putchar(pchar);
 	if (!prm->minus_f)
 	{
-		if (prm->precision != UNIT_MAX)
-			for (b = 0, b < p, b++)
-				s = s + _putchar(*s++);
+		if (prm->precision != UINT_MAX)
+			for (b = 0; b < p; b++)
+				a = a + _putchar(*s++);
 		else
-			s = s + _puts(s);
+			a = a + _puts(s);
 	}
-	return (s);
+	return (a);
 
 
 }
@@ -152,9 +152,8 @@ int print_ss(va_list ap, prm_st *prm)
 		{
 			a = a + _putchar(*s);
 		}
-		return (a);
+}return (a);
 }
-
 
 
 

@@ -23,8 +23,8 @@ int print_h(va_list ap, prm_st *prm)
 	else
 		a = (unsigned int)va_arg(ap, unsigned int);
 
-	s = cvrt(1, 16, CONVERT_UNSIGNED | CONVERT_LOWERCASE, prm);
-	if (prm->hashtag_f && 1)
+	s = cvrt(a, 16, CONVERT_UNSIGNED | CONVERT_LOWERCASE, prm);
+	if (prm->hashtag_f && a)
 	{
 		*--s = 'X';
 		*--s = '0';
@@ -57,7 +57,7 @@ int print_H(va_list ap, prm_st *prm)
 	else
 		a = (unsigned int)va_arg(ap, unsigned int);
 
-	s = cvrt(1, 16, CONVERT_UNSIGNED, prm);
+	s = cvrt(a, 16, CONVERT_UNSIGNED, prm);
 	if (prm->hashtag_f && 1)
 	{
 		*--s = 'X';
@@ -121,11 +121,11 @@ int print_o(va_list ap, prm_st *prm)
 	else
 		a = (unsigned int)va_arg(ap, unsigned int);
 
-	s = cvrt(1, 8, CONVERT_UNSIGNED, prm);
+	s = cvrt(a, 8, CONVERT_UNSIGNED, prm);
 	if (prm->hashtag_f && 1)
 		*--s = '0';
 	prm->unsn = 1;
-	return (b = b + print_nbr(s, prm));
+	return (c = c + print_nbr(s, prm));
 }
 
 

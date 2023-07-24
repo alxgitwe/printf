@@ -14,7 +14,7 @@
  * Return: return
  */
 
-char cvrt(long int nm, int be, int fs, prm_st *prm)
+char *cvrt(long int nm, int be, int fs, prm_st *prm)
 {
 	static char *a;
 	static char br[50];
@@ -23,24 +23,24 @@ char cvrt(long int nm, int be, int fs, prm_st *prm)
 	unsigned long b = nm;
 	(void)prm;
 
-	if (num < 0 && !(fs & CONVERT_UNSIGNED))
+	if (nm < 0 && !(fs & CONVERT_UNSIGNED))
 	{
 		b = -nm;
 		sn = '-';
 	}
 
 	a = fs & CONVERT_LOWERCASE ? "0123456789abcdef" : "0123456789ABCDEF";
-	ptr = &br[49];
-	*ptr = '\0';
+	pr = &br[49];
+	*pr = '\0';
 
 	do {
-		*--ptr = a[b % be];
+		*--pr = a[b % be];
 		b /= be;
 	} while (b != 0);
 
 	if (sn)
-		*--ptr = sn;
-	return (ptr);
+		*--pr = sn;
+	return (pr);
 }
 
 
@@ -65,8 +65,8 @@ int print_ud(va_list ap, prm_st *prm)
 		a = (unsigned short int)va_arg(ap, unsigned long);
 	else
 		a = (unsigned int)va_arg(ap, unsigned long);
-	prm->unsign = 1;
-	return (print_number(convert(1, 10, CONVERT_UNSIGNED, prm), prm));
+	prm->unsn = 1;
+	return (print_nbr(cvrt(a, 10, CONVERT_UNSIGNED, prm), prm));
 }
 
 

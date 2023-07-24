@@ -68,15 +68,17 @@ int print_rv(va_list ap, prm_st *prm)
 int p_rot13(va_list ap, prm_st *prm)
 
 {
-	int a = 0;
-	int b = 0;
+	int a, b;
 	int c = 0;
 	char d[] =
 		"NOPQRSTUVWXYZABCDEFGHIJKLM    nopqrstuvwxyzabcdefghijklm";
 	char *e = va_arg(ap, char *);
 	(void)prm;
 
-	while e[a]
+	a = 0;
+	b = 0;
+
+	while (e[a])
 	{
 		if ((e[a] >= 'A' && e[a] <= 'Z')
 				|| (e[a] >= 'a' && e[a] <= 'z'))
@@ -86,7 +88,7 @@ int p_rot13(va_list ap, prm_st *prm)
 		}
 		else
 			c = c + _putchar(e[a]);
-		a++
+		a++;
 	}
 	return (c);
 }
