@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * puts - function
+ * _puts - function
  *
  * @stri : char
  *
@@ -9,13 +9,13 @@
  */
 
 
-int puts(char *stri)
+int _puts(char *stri)
 {
 	char *s = stri;
 
 	while (*stri)
 		putchar(*stri++);
-	return (stri - a);
+	return (stri - s);
 
 }
 
@@ -34,16 +34,16 @@ int puts(char *stri)
 int _putchar(int chr)
 {
 	static int a;
-	static char[OUTPUT_BIF_SIZE];
+	static char buf[OUTPUT_BUF_SIZE];
 
-	if (chr == BUF_FLUSH || i >= OUTPUT_BUF_SIZE)
+	if (chr == BUF_FLUSH || a >= OUTPUT_BUF_SIZE)
 	{
 		write(1, buf, a);
 		a = 0;
 	}
 
 	if (chr != BUF_FLUSH)
-		buf[i++] = chr;
+		buf[a++] = chr;
 	return (1);
 }
 

@@ -20,19 +20,19 @@ int (*g_specifier(char *str))(va_list ap, prm_st *prm)
 		{"o", print_octal},
 		{"u", print_unsigned},
 		{"x", print_hex},
-		{"p", print_adress},
+		{"p", print_ae},
 		{"S", print_S},
-		{"r", print_rev},
-		{"R", print_rot13},
+		{"r", print_rv},
+		{"R", p_rot13},
 		{NULL, NULL}
 	};
 	int a = 0;
 
-	while (specifier[a].spcfier)
+	while (spcfier[a].spcfier)
 	{
-		if (*str == specifier[a].spcfier[0])
+		if (*str == spcfier[a].spcfier[0])
 		{
-			return (specifier[a].f);
+			return (spcfier[a].f);
 		}
 		a++;
 	}
@@ -143,7 +143,7 @@ int _modifier(char *str, prm_st *prm)
  * Return: return
  */
 
-int _width(char *str, prm_st *prm, va_list ap)
+int *_width(char *str, prm_st *prm, va_list ap)
 {
 	int a = 0;
 

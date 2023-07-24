@@ -41,11 +41,11 @@ int _printf(const char *format, ...)
 		b = _precision(b, &prm, ap);
 		if (_modifier(b, &prm))
 			b++;
-		if (!_specifier(b))
+		if (!g_specifier(b))
 			a = a + print_f_t(c, b
 					, prm.l_m || prm.h_m ? b - 1 : 0);
 		else
-			a = a + get_print_func(b, ap, &prm);
+			a = a + g_print_f(b, ap, &prm);
 	}
 	_putchar(BUF_FLUSH);
 	va_end(ap);

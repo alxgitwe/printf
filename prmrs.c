@@ -10,7 +10,7 @@
  * Return: void
  */
 
-void init_prmrs(prm_t *prm, va_list ap)
+void init_prmrs(prm_st *prm, va_list ap)
 {
 	prm->unsn = 0;
 	prm->plus_f = 0;
