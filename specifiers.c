@@ -8,6 +8,7 @@
  * Return: return
  */
 
+
 int (*g_specifier(char *str))(va_list ap, prm_st *prm)
 {
 	spcfier_t spcfier[] = {

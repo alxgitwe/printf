@@ -42,8 +42,8 @@ int _printf(const char *format, ...)
 		if (_modifier(b, &prm))
 			b++;
 		if (!g_specifier(b))
-			a = a + print_f_t(c, b
-					, prm.l_m || prm.h_m ? b - 1 : 0);
+			a = a + print_f_t(c, b,
+					 prm.l_m || prm.h_m ? b - 1 : 0);
 		else
 			a = a + g_print_f(b, ap, &prm);
 	}

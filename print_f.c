@@ -152,7 +152,7 @@ int print_ss(va_list ap, prm_st *prm)
 		{
 			a = a + _putchar(*s);
 		}
-}return (a);
+} return (a);
 }
 
 
