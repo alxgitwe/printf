@@ -71,7 +71,7 @@ int p_rot13(va_list ap, prm_st *prm)
 	int a, b;
 	int c = 0;
 	char d[] =
-		"NOPQRSTUVWXYZABCDEFGHIJKLM    nopqrstuvwxyzabcdefghijklm";
+		"NOPQRSTUVWXYZABCDEFGHIJKLM      nopqrstuvwxyzabcdefghijklm";
 	char *e = va_arg(ap, char *);
 	(void)prm;
 
