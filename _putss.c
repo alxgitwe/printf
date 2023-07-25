@@ -14,7 +14,7 @@ int _puts(char *stri)
 	char *s = stri;
 
 	while (*stri)
-		putchar(*stri++);
+		_putchar(*stri++);
 	return (stri - s);
 
 }
