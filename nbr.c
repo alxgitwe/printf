@@ -62,7 +62,7 @@ int print_ud(va_list ap, prm_st *prm)
 	if (prm->l_m)
 		a = (unsigned long)va_arg(ap, unsigned long);
 	else if (prm->h_m)
-		a = (unsigned short int)va_arg(ap, unsigned long);
+		a = (unsigned short int)va_arg(ap, unsigned int);
 	else
 		a = (unsigned int)va_arg(ap, unsigned long);
 	prm->unsn = 1;
